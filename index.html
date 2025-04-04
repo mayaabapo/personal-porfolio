@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Abapo Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div id="particles-js"></div>
+    
+    <header>
+        <nav>
+            <div class="logo" id="logo-3d">MAYA ABAPO</div>
+            <ul class="nav-links">
+                <li><a href="#about"><span class="nav-number"></span>About</a></li>
+                <li><a href="#skills"><span class="nav-number"></span>Skills</a></li>
+                <li><a href="#projects"><span class="nav-number"></span>Projects</a></li>
+                <li><a href="#achievements"><span class="nav-number"></span>Achievements</a></li>
+                <li><a href="#journey"><span class="nav-number"></span>Journey</a></li>
+                <li><a href="#contact"><span class="nav-number"></span>Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tag">ASPIRING DATA ANALYST</div>
+                <h1 class="hero-title">
+                    <span class="title-line"><span class="title-word">Analyze.</span></span>
+                    <span class="title-line"><span class="title-word">Visualize.</span> <span class="title-word"></span></span>
+                    <span class="title-line"><span class="title-word">Discover.</span></span>
+                </h1>
+                <p class="hero-text">Passionate about data, I transform raw data into meaningful insights that drive decisions.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">
+                        <span>Explore My Work</span>
+                        <div class="btn-hover"></div>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <span>Contact Maya</span>
+                        <div class="btn-hover"></div>
+                    </a>
+                </div>
+                <div class="hero-scroll">
+                    <div class="scroll-animation"></div>
+                    <span>Scroll to Explore</span>
+                </div>
+            </div>
+            <div class="hero-visualization">
+                <div class="data-sphere" id="dataSphere"></div>
+                <canvas id="heroChart"></canvas>
+                <div class="data-connections"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="section-header about-title">
+                <h2 class="section-title"><span class="section-number">01.</span> About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-container  about-title">
+                <div class="about-image  about-title">
+                    <div class="image-wrapper about-title">
+                        <div class="image-main"></div>
+                        <div class="image-grid"></div>
+                        <div class="image-particles"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-bio">
+                        <h3>Hello, I'm <span class="name-highlight">Maya Abapo</span></h3>
+                        <p>I’m an aspiring data analyst with a strong foundation in data analysis, visualization, and storytelling. With a degree in Computer Science and a Google Data Analytics Professional Certificate, I’m passionate about turning complex data into actionable insights that drive informed decisions.</p>
+                        <p>While I don’t have professional experience yet, I’ve completed projects in data cleaning, analysis, and visualization that showcase my abilities. I’m currently seeking an entry-level role where I can apply my skills and grow as a data professional.</p>
+                        <p>Take a look around my portfolio to see my work – I’d love to connect!</p>
+                    </div>
+                    <div class="about-quote">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="quote-text">"My goal is to not only to analyze data, but to also inspire others to see its full potential."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="section-header">
+                <h2 class="section-title"><span class="section-number">02.</span> My Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skills-visualization">
+                    <div class="skills-orbit">
+                        <div class="orbit-center">
+                            <div class="orbit-pulse"></div>
+                            <div class="orbit-core"></div>
+                        </div>
+                        <div class="orbit-path">
+                            <div class="skill-planet" data-skill="Python">
+                                <div class="planet-icon"><i class="fab fa-python"></i></div>
+                            </div>
+                            <div class="skill-planet" data-skill="SQL">
+                                <div class="planet-icon"><i class="fas fa-database"></i></div>
+                            </div>
+                            <div class="skill-planet" data-skill="Tableau">
+                                <div class="planet-icon"><i class="fas fa-chart-bar"></i></div>
+                            </div>
+                            <div class="skill-planet" data-skill="R">
+                                <div class="planet-icon"><i class="fas fa-square-root-alt"></i></div>
+                            </div>
+                            <div class="skill-planet" data-skill="Excel">
+                                <div class="planet-icon"><i class="fas fa-file-excel"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-details">
+                        <h3 class="skill-name">Hover a Skill</h3>
+                        <div class="skill-description">Select one of the orbiting skills to see details</div>
+                        <div class="skill-meter">
+                            <div class="meter-bar" style="width: 0%"></div>
+                            <div class="meter-labels">
+                                <span>Novice</span>
+                                <span>Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Technical Skills</h3>
+                        <ul>
+                            <li>Data Cleaning</li>
+                            <li>Statistical Analysis</li>
+                            <li>Machine Learning </li>
+                            <li>Data Visualization</li>
+                            <li>Predictive Modelling</li>
+                            <li>Database Management</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> Analytical Skills</h3>
+                        <ul>
+                            <li>Critical Thinking</li>
+                            <li>Data Analysis</li>
+                            <li>Problem Solving</li>
+                            <li>Research Skills</li>
+                            <li>Quantitative Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-comments"></i> Soft Skills</h3>
+                        <ul>
+                            <li>Communication </li>
+                            <li>Collaboration</li>
+                            <li>Time Management</li>
+                            <li>Adaptability</li>
+                            <li>Creativity</li>
+                            <li>Project Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2 class="section-title"><span class="section-number">03.</span> Data Projects</h2>
+                <div class="section-line"></div>
+            </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-category="analysis,viz">
+                        <div class="project-image">
+                           
+                            <div class="project-visual" id="project1-visual">
+                                <img src="C:/Users/mayaa/Downloads/portfolio-site/bike-share.png">
+                            </div>
+                            
+                            <div class="project-overlay">
+                                <h3>Skills</h3>
+                                <div class="project-tags">
+                                    <span>R</span>
+                                    <span>Tableau</span>    
+                                    <span>Excel</span>                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Google Data Analytics Capstone Project: Cyclistic Bike-share Case Study</h3>
+                            <p>A data-driven analysis uncovering ridership trends and business insights for a bike-share company.</p>
+                            <a href="https://medium.com/@mayaabapo/google-data-analytics-capstone-project-cyclistic-bike-share-case-study-d5a1cf2463b1" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                   
+                    
+                    <div class="project-card" data-category="ml">
+                        <div class="project-image">
+                            <div class="project-visual" id="project2-visual">
+                                <img src= "C:/Users/mayaa/Downloads/portfolio-site/map.avif">
+                            </div>
+                            <div class="project-overlay">
+                                <h3>Skills</h3>
+                                <div class="project-tags">
+                                    <span>R</span>
+                                    <span>Python</span>
+                                    <span>Tableau</span>
+                                    <span>Excel</span>         
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Los Angeles Crime Data Analysis (2020–2024)</h3>
+                            <p>An investigative study on crime trends and patterns in Los Angeles, leveraging data analytics for deeper insights.</p>
+                            <a href="https://medium.com/@mayaabapo/los-angeles-crime-data-analysis-trends-patterns-and-insights-2020-2024-b6d423c79955" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="analysis">
+                        <div class="project-image">
+                            <div class="project-visual" id="project3-visual">
+                                <img src="C:/Users/mayaa/Downloads/portfolio-site/ml.png">
+                            </div>
+                            <div class="project-overlay">
+                                <h3>Skills</h3>
+                                <div class="project-tags">
+                                    <span>Python</span>
+                                    <span>Machine Learning</span>
+                                    <span>Data Science</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Machine Learning in Education</h3>
+                            <p>A thesis project evaluating Support Vector Machine performance in predicting student behavioral patterns and academic outcomes.</p>
+                            <a href="https://medium.com/@mayaabapo/evaluating-svm-performance-on-student-behavior-data-from-lms-4876237374ca" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="viz">
+                        <div class="project-image">
+                            <div class="project-visual" id="project4-visual">
+                                <img src="C:/Users/mayaa/Downloads/portfolio-site/bellabeat.avif">
+                            </div>
+                            <div class="project-overlay">
+                                <h3>Skills</h3>
+                                <div class="project-tags">
+                                    <span>R</span>
+                                    <span>Tableau</span>
+                                    <span>Excel</span>         
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Google Data Analytics Capstone: Bellabeat Case Study
+                            </h3>
+                            <p>Exploring fitness and health data to provide strategic insights for Bellabeat’s wellness products.</p>
+                            <a href="https://medium.com/@mayaabapo/google-data-analytics-capstone-project-bellabeat-data-analysis-case-study-4c9045e9fda8" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements">
+            <div class="section-header achievements-title">
+                <h2 class="section-title "><span class="section-number">04.</span> Achievements</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="achievements-container">
+                <div class="achievements-grid">
+                    <!-- Achievement 1 -->
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="achievement-pulse"></div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Cum Laude Honoree</h3>
+                            <div class="achievement-date">2024</div>
+                            <p>Recognized for outstanding academic performance and excellence.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Achievement 2 -->
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal "></i>
+                            <div class="achievement-pulse"></div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Dean's List Distinction</h3>
+                            <div class="achievement-date">2020-2024</div>
+                            <p>Achieved top academic standing every semester from freshman to senior year.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Achievement 3 -->
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-certificate"></i>
+                            <div class="achievement-pulse"></div>
+                        </div>
+                        <div class="achievement-content">
+                            <h3>Full Scholarship Recipient</h3>
+                            <div class="achievement-date">2018-2019</div>
+                            <p>Awarded a full scholarship covering full tuition for academic excellence in senior high school.</p>
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="journey">
+            <div class="section-header achievements-title">
+                <h2 class="section-title"><span class="section-number">05.</span> My Data Journey</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="journey-container">
+                <div class="journey-path">
+                    <div class="path-line"></div>
+                    <div class="path-milestones">
+                        <div class="milestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <div class="milestone-date">June 2023</div>
+                                <h3 class="milestone-title">Discovery Phase</h3>
+                                <p class="milestone-description">Discovered about data analysis due to my machine learning thesis project.</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <div class="milestone-date">June – December 2023</div>
+                                <h3 class="milestone-title">Learning the Basics</h3>
+                                <p class="milestone-description"> Studied core data analysis concepts, including data cleaning, statistics, visualization, and other machine learning fundamentals.</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <div class="milestone-date">June – December 2023</div>
+                                <h3 class="milestone-title">Technical Skills Development</h3>
+                                <p class="milestone-description">Gained experience using Python and R for data manipulation, analysis, and visualization.</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <div class="milestone-date">January 2024</div>
+                                <h3 class="milestone-title">Realizing My Passion</h3>
+                                <p class="milestone-description">Realized I genuinely enjoyed working with data and got excited by the process of analyzing it to uncover valuable insights.</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <div class="milestone-date">May 2024</div>
+                                <h3 class="milestone-title">Thesis Completion</h3>
+                                <p class="milestone-description">Successfully defended my machine learning thesis project.</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <div class="milestone-date">June – September 2024</div>
+                                <h3 class="milestone-title">Professional Growth</h3>
+                                <p class="milestone-description">Expanded my knowledge by completing the Google Data Analytics Professional Certificate, gaining expertise in tools like Tableau and SQL</p>
+                            </div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-dot"></div>
+                            <div class="milestone-content">
+                                <div class="milestone-date">October 2024 – Present</div>
+                                <h3 class="milestone-title">Practical Application</h3>
+                                <p class="milestone-description">Continuing to enhance my expertise through personal projects, applying data analysis to real-world scenarios and refining my problem-solving skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2 class="section-title"><span class="section-number">06.</span> Contact Maya</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-message">
+                    <h3>Ready to Collaborate?</h3>
+                    <p>I'm currently available for freelance projects or full-time positions. Let's discuss how I can help extract insights from your data universe.</p>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-paper-plane"></i></div>
+                            <div class="info-content">
+                                <div class="info-label">Email</div>
+                                <div class="info-value">mayaabapo87@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-content">
+                                <div class="info-label">Location</div>
+                                <div class="info-value">Philippines; Dubai</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/hansczkamayaabapo/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:mayaabapo87@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://medium.com/@mayaabapo"class="social-link"><i class="fab fa-medium-m"></i></a>
+                    </div>
+                </div>          
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">ASPIRING ANALYST</div>
+            <div class="footer-mission">Unlocking the potential of data to drive meaningful change.</div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/hansczkamayaabapo/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:mayaabapo87@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://medium.com/@mayaabapo"><i class="fab fa-medium-m"></i></a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2024 Maya Abapo. All rights reserved.
+                <div class="footer-credits">
+                    Crafted with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
